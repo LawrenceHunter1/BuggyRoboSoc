@@ -8,24 +8,32 @@ Motor leftMotor = Motor(6, 10, LEFT);
 Motor rightMotor = Motor(9, 11, RIGHT);
 UnifiedMotor uMotor = UnifiedMotor(&leftMotor, &rightMotor);
 
+// Move xcm
+long x = 10;
+
 void setup() {
-    delay(5000);
+    // delay(5000);
     servo.attach(12);
     head.setServo(&servo);
-    head.rotate(90);
+    head.initialise();
     // Serial monitor
     Serial.begin(9600);
-    Serial.println("Driving towards a wall and NOT hitting it!");
+    Serial.print("Driving ");
+    Serial.print(x);
+    Serial.println("cm");
 }
 
 void loop() {
+    delay(100);
     long init_distance = head.checkDistance();
     uMotor.moveForward();
-    while(head.checkDistance() > 30){
+    while(head.checkDistance() > init_distance - x){
         delay(15);
     }
     uMotor.stop();
-    Serial.print("Within 30cm of wall.");
-    delay(100);
+    Serial.print("Drove ");
+    Serial.print(x);
+    Serial.println("cm");
+    delay(15);
     exit(0);
 }
