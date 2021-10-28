@@ -8,11 +8,14 @@ Head::Head(int echo, int trig) {
 
     _trig = trig;
     pinMode(_trig, OUTPUT);
+
+    Serial.println("HEAD - CREATED");
 }
 
 void Head::initialise() {
     _servo->write(90);
     delay(100);
+    Serial.println("HEAD - INITIALISED");
 }
 
 long Head::checkDistance() {
@@ -32,12 +35,14 @@ long Head::checkDistance() {
     // Calculates distance
     distance = duration * 0.034 / 2; // Speed of sound
 
+    Serial.println("HEAD - CHECK DISTANCE");
     return distance;
 }
 
 void Head::rotate(long angle) {
     _servo->write(angle);
     delay(100);
+    Serial.println("HEAD - ROTATE");
 }
 
 int Head::getEchoPin() {

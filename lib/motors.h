@@ -22,6 +22,8 @@ class UnifiedMotor {
         void moveForward();
         void moveBackward();
         void stop();
+        void turnLeft(float theta);
+        void turnRight(float theta);
     private:
         Motor *_leftMotor;
         Motor *_rightMotor;   
