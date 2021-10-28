@@ -8,8 +8,6 @@ Motor leftMotor = Motor(6, 10, LEFT);
 Motor rightMotor = Motor(9, 11, RIGHT);
 UnifiedMotor uMotor = UnifiedMotor(&leftMotor, &rightMotor);
 
-long distances[181];
-
 void setup() {
     delay(5000);
     servo.attach(12);
@@ -46,8 +44,5 @@ void loop() {
     } else if (angle < 90) {
         uMotor.turnRight(float(90-angle));
     }
-    Serial.println(angle);
-    Serial.println(max);
-    delay(200);
     exit(0);
 }

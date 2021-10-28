@@ -19,13 +19,14 @@ void setup() {
 }
 
 void loop() {
-    int max, angle = -1;
+    int angle = -1;
+    int min = 32767;
     for (int i = 0; i <= 180; i++) {
         head.rotate(i);
         delay(10);
         int distance = head.checkDistance();
-        if (distance > max) {
-            max = distance;
+        if (distance < min) {
+            min = distance;
             angle = i;
         }
     }
