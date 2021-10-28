@@ -1,3 +1,6 @@
+#ifndef MOTORS_H
+#define MOTORS_H
+
 typedef enum {
     LEFT,
     RIGHT
@@ -24,7 +27,11 @@ class UnifiedMotor {
         void stop();
         void turnLeft(float theta);
         void turnRight(float theta);
+        Motor* getLeftMotor();
+        Motor* getRightMotor();
     private:
         Motor *_leftMotor;
         Motor *_rightMotor;   
 };
+
+#endif

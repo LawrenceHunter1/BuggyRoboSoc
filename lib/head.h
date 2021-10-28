@@ -1,3 +1,5 @@
+#ifndef HEAD_H
+#define HEAD_H
 #include "Servo.h"
 
 class Head {
@@ -15,3 +17,5 @@ class Head {
         int _trig;
         Servo* _servo;
 };
+
+#endif

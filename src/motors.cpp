@@ -73,3 +73,11 @@ void UnifiedMotor::turnLeft(float theta) {
     delay(2475*(theta/360.0));
     _rightMotor->stop();
 }
+
+Motor* UnifiedMotor::getLeftMotor() {
+    return _leftMotor;
+}
+
+Motor* UnifiedMotor::getRightMotor() {
+    return _rightMotor;
+}
