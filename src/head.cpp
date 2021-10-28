@@ -34,15 +34,12 @@ long Head::checkDistance() {
     duration = pulseIn(_echo, HIGH);
     // Calculates distance
     distance = duration * 0.034 / 2; // Speed of sound
-
-    Serial.println("HEAD - CHECK DISTANCE");
     return distance;
 }
 
 void Head::rotate(long angle) {
     _servo->write(angle);
     delay(100);
-    Serial.println("HEAD - ROTATE");
 }
 
 int Head::getEchoPin() {
