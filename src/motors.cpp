@@ -60,15 +60,15 @@ void UnifiedMotor::stop() {
     Serial.println("UNIFIED MOTOR - STOP");
 }
 
-void UnifiedMotor::turnLeft(float theta) {
-    Serial.println("UNIFIED MOTOR - TURN LEFT");
+void UnifiedMotor::turnRight(float theta) {
+    Serial.println("UNIFIED MOTOR - TURN RIGHT");
     _leftMotor->moveForward();
     delay(2475*(theta/360.0));
     _leftMotor->stop();
 }
 
-void UnifiedMotor::turnRight(float theta) {
-    Serial.println("UNIFIED MOTOR - TURN RIGHT");
+void UnifiedMotor::turnLeft(float theta) {
+    Serial.println("UNIFIED MOTOR - TURN LEFT");
     _rightMotor->moveForward();
     delay(2475*(theta/360.0));
     _rightMotor->stop();
