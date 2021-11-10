@@ -2,12 +2,15 @@
 #define HEAD_H
 #include "Servo.h"
 
+// Class to encapsulate the sensor and servo
+// allows implementation of rotation and distance
+// checking simply
 class Head {
     public:
         Head(int echo, int trig);
         void initialise();
-        long checkDistance();
-        void rotate(long angle);
+        double checkDistance();
+        void rotate(double angle);
         int getEchoPin();
         int getTrigPin();
         Servo* getServo();
